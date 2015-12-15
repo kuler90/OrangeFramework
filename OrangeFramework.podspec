@@ -20,10 +20,13 @@ Pod::Spec.new do |s|
   s.license          = 'MIT'
   s.author           = { "Roman Kulesha" => "kulesha.r@gmail.com" }
   s.source           = { :git => "https://github.com/kuler90/OrangeFramework.git", :tag => s.version.to_s }
+  s.default_subspecs = 'Dependency'
   s.platform     = :ios, '8.0'
   s.requires_arc = true
-  s.source_files = 'OrangeFramework/**/*'
+  s.xcconfig = { 'SWIFT_INSTALL_OBJC_HEADER' => 'NO', 'EMBEDDED_CONTENT_CONTAINS_SWIFT' => 'NO' }
 
-  # s.public_header_files = 'OrangeFramework/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
+  s.subspec 'Dependency' do |ss|
+    ss.source_files = 'OrangeFramework/OFDependency/*'
+  end
+
 end
