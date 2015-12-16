@@ -38,7 +38,7 @@ describe(@"dependency", ^{
           expect(@([OFDependency availableForKey:dependencyKey])).to(beTrue());
         });
         it(@"resolve with single instance everytime", ^{
-          id instance1 = [OFDependency resolveByKey:dependencyKey];
+          __weak id instance1 = [OFDependency resolveByKey:dependencyKey];
           id instance2 = [OFDependency resolveByKey:dependencyKey];
           expect(instance1).to(beIdenticalTo(instance2));
         });
