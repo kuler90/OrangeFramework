@@ -58,10 +58,13 @@ describe(@"dependency", ^{
           expect(instance1).to(beIdenticalTo(instance2));
         });
         it(@"resolve with new instance if last instance is deallocated", ^{
-          __weak id instance1 = [OFDependency resolveByKey:dependencyKey];
-          id instance2 = [OFDependency resolveByKey:dependencyKey];
-          expect(instance1).to(beNil());
-          expect(instance2).toNot(beNil());
+          block weak id instance1;
+          __block id instance2;
+          dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            instance1 = [OFDependency resolveByKey:dependencyKey];
+            instance2 = [OFDependency resolveByKey:dependencyKey];
+          });
+          expect(instance2).toNotEventually(beIdenticalTo(instance1));
         });
       });
     });
