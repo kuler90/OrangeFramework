@@ -26,15 +26,15 @@ Pod::Spec.new do |s|
   s.xcconfig = { 'SWIFT_INSTALL_OBJC_HEADER' => 'NO', 'EMBEDDED_CONTENT_CONTAINS_SWIFT' => 'NO' }
 
   s.subspec 'Dependency' do |ss|
-    ss.source_files = 'OrangeFramework/OFDependency/*'
+    ss.source_files = 'OrangeFramework/Dependency/*'
   end
 
   s.subspec 'Log' do |ss|
-    ss.source_files = 'OrangeFramework/OFLog/*'
+    ss.source_files = 'OrangeFramework/Log/*'
   end
 
   s.subspec 'Segue' do |ss|
-    ss.source_files = 'OrangeFramework/OFSegue/*'
+    ss.source_files = 'OrangeFramework/Segue/*'
   end
 
 end
