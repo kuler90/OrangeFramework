@@ -1,13 +1,28 @@
 import Foundation
 
+private class Box<T>: CustomStringConvertible, CustomDebugStringConvertible {
+  let value: T
+  init(_ value: T) {
+    self.value = value
+  }
+  @objc
+  var description: String {
+    return String(value)
+  }
+  @objc
+  var debugDescription: String {
+    return String(reflecting: value)
+  }
+}
+
 public extension OFLogger {
   
   public func log<T>(value: T?, flag: OFLogFlag, function: String = __FUNCTION__, file: String = __FILE__, line: UInt32 = __LINE__) {
     var logObject: AnyObject?
-    if value != nil && !(value is AnyObject) {
-      logObject = String(reflecting: value!)
-    } else {
+    if value is AnyObject {
       logObject = value as? AnyObject
+    } else if value != nil {
+      logObject = Box(value!)
     }
     __log(logObject, withFlag: flag, function: function, file: file, line: line)
   }
