@@ -2,6 +2,20 @@
 
 @implementation NSString (OFExtension)
 
+#pragma mark - Reading Time
+
+- (NSTimeInterval)readingTime {
+  return [self readingTimeWithSpeed:250];
+}
+
+- (NSTimeInterval)readingTimeWithSpeed:(NSUInteger)speed {
+  NSMutableArray *words = [[self componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] mutableCopy];
+  [words removeObject:@""];
+  return words.count / (speed * 60.0);
+}
+
+#pragma mark - Regex
+
 - (BOOL)matchRegex:(NSString *)pattern {
   return [[NSPredicate predicateWithFormat:@"SELF MATCHES %@", pattern] evaluateWithObject:self];
 }

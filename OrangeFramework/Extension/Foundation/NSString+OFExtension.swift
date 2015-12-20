@@ -1,26 +1,31 @@
 import Foundation
 
 public extension String {
+    
+  // MARK: - Reading Time
   
-  var length: Int { return self.characters.count }
+  public func readingTime(speed speed: UInt = 250) -> NSTimeInterval { // speed = words per minute. default speed = 250
+    return (self as NSString).readingTimeWithSpeed(speed)
+  }
+  // MARK: - Regex
   
-  func matchRegex(pattern: String) -> Bool {
+  public func matchRegex(pattern: String) -> Bool {
     return (self as NSString).matchRegex(pattern)
   }
   
-  func firstMatchOfRegex(pattern: String) -> String? {
+  public func firstMatchOfRegex(pattern: String) -> String? {
     return (self as NSString).firstMatchOfRegex(pattern)
   }
   
-  func allMatchesOfRegex(pattern: String) -> [String] {
+  public func allMatchesOfRegex(pattern: String) -> [String] {
     return (self as NSString).allMatchesOfRegex(pattern)
   }
   
-  func matchEmailString() -> Bool {
+  public func matchEmailString() -> Bool {
     return (self as NSString).matchEmailString()
   }
   
-  func matchUrlString() -> Bool {
+  public func matchUrlString() -> Bool {
     return (self as NSString).matchUrlString()
   }
   
