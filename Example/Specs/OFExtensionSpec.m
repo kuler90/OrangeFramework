@@ -4,4 +4,16 @@
 
 QuickSpecBegin(OFExtensionSpec)
 
+describe(@"NSBlockOperation+AsyncBlock", ^{
+  
+})
+
+describe(@"NSString+Regex", ^{
+  
+})
+
+describe(@"UIColor+HexString", ^{
+  
+})
+
 QuickSpecEnd
