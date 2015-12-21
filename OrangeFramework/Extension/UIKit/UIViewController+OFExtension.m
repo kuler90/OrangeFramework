@@ -10,4 +10,12 @@
   [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (UIViewController *)topViewController {
+  UIViewController *topVC = [UIApplication sharedApplication].keyWindow.rootViewController;
+  while (topVC.presentedViewController) {
+    topVC = topVC.presentedViewController;
+  }
+  return topVC;
+}
+
 @end
