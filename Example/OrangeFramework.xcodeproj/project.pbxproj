@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		AA0C2C3295909865A8E1A92C /* Pods_OrangeFramework_Specs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 392345B1702AD99291BF5E17 /* Pods_OrangeFramework_Specs.framework */; };
-		B73EA13B1C20923800681710 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B73EA1381C20923800681710 /* Info.plist */; };
 		B73EA13C1C20923800681710 /* OFDependencySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B73EA1391C20923800681710 /* OFDependencySpec.m */; };
 		B73EA13D1C20923800681710 /* OFDependencySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73EA13A1C20923800681710 /* OFDependencySpec.swift */; };
 		B73EA1471C218F8C00681710 /* OFLogSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B73EA1461C218F8C00681710 /* OFLogSpec.m */; };
@@ -138,7 +137,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACE41AFB9204008FA782 = {
@@ -170,7 +169,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B73EA13B1C20923800681710 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
