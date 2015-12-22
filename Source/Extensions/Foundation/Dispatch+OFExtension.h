@@ -1,0 +1,36 @@
+#import <Foundation/Foundation.h>
+
+NS_ASSUME_NONNULL_BEGIN
+
+FOUNDATION_EXPORT void dispatch_main_async(dispatch_block_t block);
+FOUNDATION_EXPORT void dispatch_background_async(dispatch_block_t block);
+FOUNDATION_EXPORT void dispatch_after_interval(NSTimeInterval interval, dispatch_queue_t queue, dispatch_block_t block);
+FOUNDATION_EXPORT void dispatch_main_after_interval(NSTimeInterval interval, dispatch_block_t block);
+FOUNDATION_EXPORT void dispatch_background_after_interval(NSTimeInterval after, dispatch_block_t block);
+
+#define dispatch_main_async __OF_dispatch_main_async
+NS_INLINE void __OF_dispatch_main_async(dispatch_block_t block) {
+  dispatch_async(dispatch_get_main_queue(), block);
+}
+
+#define dispatch_background_async __OF_dispatch_background_async
+NS_INLINE void __OF_dispatch_background_async(dispatch_block_t block) {
+  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), block);
+}
+
+#define dispatch_after_interval __OF_dispatch_after_interval
+NS_INLINE void __OF_dispatch_after_interval(NSTimeInterval interval, dispatch_queue_t queue, dispatch_block_t block) {
+  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(interval * NSEC_PER_SEC)), queue, block);
+}
+
+#define dispatch_main_after_interval __OF_dispatch_main_after_interval
+NS_INLINE void __OF_dispatch_main_after_interval(NSTimeInterval interval, dispatch_block_t block) {
+  __OF_dispatch_after_interval(interval, dispatch_get_main_queue(), block);
+}
+
+#define dispatch_background_after_interval __OF_dispatch_background_after_interval
+NS_INLINE void __OF_dispatch_background_after_interval(NSTimeInterval interval, dispatch_block_t block) {
+  __OF_dispatch_after_interval(interval, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), block);
+}
+
+NS_ASSUME_NONNULL_END

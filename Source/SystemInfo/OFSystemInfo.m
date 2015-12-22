@@ -1,9 +1,9 @@
 #import "OFSystemInfo.h"
 
-@implementation _OFSystemInfo
+@implementation __OFSystemInfo
 
 + (instancetype)sharedInfo {
-  static _OFSystemInfo *instance = nil;
+  static __OFSystemInfo *instance = nil;
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
     instance = [self new];

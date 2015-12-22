@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B73EA13B1C20923800681710 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B73EA1381C20923800681710 /* Info.plist */; };
 		B73EA13C1C20923800681710 /* OFDependencySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B73EA1391C20923800681710 /* OFDependencySpec.m */; };
 		B73EA13D1C20923800681710 /* OFDependencySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73EA13A1C20923800681710 /* OFDependencySpec.swift */; };
 		B73EA1471C218F8C00681710 /* OFLogSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B73EA1461C218F8C00681710 /* OFLogSpec.m */; };
 		B73EA1491C218FA500681710 /* OFLogSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73EA1481C218FA500681710 /* OFLogSpec.swift */; };
 		B7A2D82C1C23064100080093 /* OFExtensionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A2D82B1C23064100080093 /* OFExtensionSpec.m */; };
+		B7B9C9C51C2AAA77006FC8AF /* OrangeFrameworkObjC.podspec in Resources */ = {isa = PBXBuildFile; fileRef = B7B9C9C41C2AAA77006FC8AF /* OrangeFrameworkObjC.podspec */; };
 		BDE7A31337913D25FBC75722 /* Pods_OrangeFramework_Specs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DCBB1CDA75E36449C1C2D5D /* Pods_OrangeFramework_Specs.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +28,7 @@
 		B73EA1461C218F8C00681710 /* OFLogSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFLogSpec.m; sourceTree = "<group>"; };
 		B73EA1481C218FA500681710 /* OFLogSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OFLogSpec.swift; sourceTree = "<group>"; };
 		B7A2D82B1C23064100080093 /* OFExtensionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFExtensionSpec.m; sourceTree = "<group>"; };
+		B7B9C9C41C2AAA77006FC8AF /* OrangeFrameworkObjC.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = OrangeFrameworkObjC.podspec; path = ../OrangeFrameworkObjC.podspec; sourceTree = "<group>"; };
 		F37C9518BA8F4C03FE1D26EC /* OrangeFramework.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = OrangeFramework.podspec; path = ../OrangeFramework.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,6 +68,7 @@
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
+				B7B9C9C41C2AAA77006FC8AF /* OrangeFrameworkObjC.podspec */,
 				F37C9518BA8F4C03FE1D26EC /* OrangeFramework.podspec */,
 				90233076878E7EA11B771E9A /* README.md */,
 			);
@@ -173,7 +175,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B73EA13B1C20923800681710 /* Info.plist in Resources */,
+				B7B9C9C51C2AAA77006FC8AF /* OrangeFrameworkObjC.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

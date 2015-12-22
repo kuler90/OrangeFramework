@@ -1,10 +1,10 @@
 #import <UIKit/UIKit.h>
 
-#define OFSystemInfo [_OFSystemInfo sharedInfo]
+#define OFSystemInfo [__OFSystemInfo sharedInfo]
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface _OFSystemInfo : NSObject
+@interface __OFSystemInfo : NSObject
 
 + (instancetype)sharedInfo;
 

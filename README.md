@@ -8,18 +8,21 @@ OrangeFramework includes:
 * Powerful extensions.
 * Simple system info getter.
 
-## Requirements
-
-* iOS 8.0+
-* Xcode 7.0+
-
 ## Installation
 
-OrangeFramework is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+OrangeFramework is available through [CocoaPods](http://cocoapods.org):
 
 ```ruby
-pod "OrangeFramework"
+platform :ios, '8.0'
+use_frameworks!
+pod 'OrangeFramework'
+```
+
+If you don't want use frameworks or support Swift you can install only Objective-C version:
+
+```ruby
+platform :ios, '7.0'
+pod 'OrangeFrameworkObjC'
 ```
 
 ## Author
