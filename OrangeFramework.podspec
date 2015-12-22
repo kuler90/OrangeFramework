@@ -6,21 +6,16 @@
 Pod::Spec.new do |s|
   s.name             = "OrangeFramework"
   s.version          = "0.1.0"
-  s.summary          = "OrangeFramework is a collection of tools for iOS development aimed at fast and high quality coding on Swift and Objective C."
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!  
+  s.summary          = "Powerful framework aimed at fast and high quality developing mobile apps on Objective-C and Swift.
   s.description      = <<-DESC
+                       OrangeFramework is a collection of components for fast and high quality developing mobile apps on Objective-C and Swift.
+                       It includes a light-weight iOC container (used for dependency injection), flexible logger, powerful extensions and simple system info getter.
                        DESC
-
   s.homepage         = "https://github.com/kuler90/OrangeFramework"
   s.license          = 'MIT'
   s.author           = { "Roman Kulesha" => "kulesha.r@gmail.com" }
   s.source           = { :git => "https://github.com/kuler90/OrangeFramework.git", :tag => s.version.to_s }
-  s.default_subspecs = 'Dependency', 'Log', 'SystemInfo', 'Extensions', 'Segue'
+  s.default_subspecs = 'Dependency', 'Log', 'SystemInfo', 'Extensions', 'Segues'
   s.platform     = :ios, '8.0'
   s.requires_arc = true
   s.xcconfig = { 'SWIFT_INSTALL_OBJC_HEADER' => 'NO', 'EMBEDDED_CONTENT_CONTAINS_SWIFT' => 'NO' }
@@ -33,16 +28,16 @@ Pod::Spec.new do |s|
     ss.source_files = 'OrangeFramework/Log/**/*'
   end
 
-  s.subspec 'Segue' do |ss|
-    ss.source_files = 'OrangeFramework/Segue/**/*'
+  s.subspec 'SystemInfo' do |ss|
+    ss.source_files = 'OrangeFramework/SystemInfo/**/*'
   end
 
   s.subspec 'Extensions' do |ss|
     ss.source_files = 'OrangeFramework/Extensions/**/*'
   end
 
-  s.subspec 'SystemInfo' do |ss|
-    ss.source_files = 'OrangeFramework/SystemInfo/**/*'
+  s.subspec 'Segues' do |ss|
+    ss.source_files = 'OrangeFramework/Segues/**/*'
   end
 
 end
