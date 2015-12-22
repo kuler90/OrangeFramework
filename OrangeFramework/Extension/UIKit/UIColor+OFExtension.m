@@ -18,8 +18,11 @@
   unsigned rgbValue = 0;
   NSScanner *scanner = [NSScanner scannerWithString:hexString];
   [scanner setCharactersToBeSkipped:[NSCharacterSet characterSetWithCharactersInString:@"#"]];
-  [scanner scanHexInt:&rgbValue];
-  return [self colorWith8BitRed:(rgbValue & 0xFF0000) >> 16 green:(rgbValue & 0xFF00) >> 8 blue:rgbValue & 0xFF alpha:alpha];
+  if ([scanner scanHexInt:&rgbValue] && [NSString stringWithFormat:@"%x",rgbValue].length == 6) {
+    return [self colorWith8BitRed:(rgbValue & 0xFF0000) >> 16 green:(rgbValue & 0xFF00) >> 8 blue:rgbValue & 0xFF alpha:alpha];
+  } else {
+    return nil;
+  }
 }
 
 @end
