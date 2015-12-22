@@ -15,11 +15,15 @@
 }
 
 + (instancetype)colorWithHexString:(NSString *)hexString alpha:(CGFloat)alpha {
-  unsigned rgbValue = 0;
-  NSScanner *scanner = [NSScanner scannerWithString:hexString];
-  [scanner setCharactersToBeSkipped:[NSCharacterSet characterSetWithCharactersInString:@"#"]];
-  [scanner scanHexInt:&rgbValue];
-  return [self colorWith8BitRed:(rgbValue & 0xFF0000) >> 16 green:(rgbValue & 0xFF00) >> 8 blue:rgbValue & 0xFF alpha:alpha];
+  NSString *cleanedHexString = [hexString stringByReplacingOccurrencesOfString:@"#" withString:@""];
+  if (cleanedHexString.length == 6) {
+    NSScanner *scanner = [NSScanner scannerWithString:cleanedHexString];
+    unsigned rgbValue = 0;
+    if ([scanner scanHexInt:&rgbValue]) {
+      return [self colorWith8BitRed:(rgbValue & 0xFF0000) >> 16 green:(rgbValue & 0xFF00) >> 8 blue:rgbValue & 0xFF alpha:alpha];
+    }
+  }
+  return nil;
 }
 
 @end
