@@ -3,14 +3,14 @@ PODS:
   - OrangeFramework (0.1.0):
     - OrangeFramework/Dependency (= 0.1.0)
     - OrangeFramework/Extensions (= 0.1.0)
-    - OrangeFramework/Helper (= 0.1.0)
     - OrangeFramework/Log (= 0.1.0)
     - OrangeFramework/Segue (= 0.1.0)
+    - OrangeFramework/SystemInfo (= 0.1.0)
   - OrangeFramework/Dependency (0.1.0)
   - OrangeFramework/Extensions (0.1.0)
-  - OrangeFramework/Helper (0.1.0)
   - OrangeFramework/Log (0.1.0)
   - OrangeFramework/Segue (0.1.0)
+  - OrangeFramework/SystemInfo (0.1.0)
   - Quick (0.8.0)
 
 DEPENDENCIES:
@@ -24,7 +24,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Nimble: 4c353d43735b38b545cbb4cb91504588eb5de926
-  OrangeFramework: 58c291a6a9b8e34470ecff64203b76df6ee034da
+  OrangeFramework: eefc467b5f89a9ddf78c220ac219030e9b57d0e5
   Quick: 563d0f6ec5f72e394645adb377708639b7dd38ab
 
 COCOAPODS: 0.39.0
