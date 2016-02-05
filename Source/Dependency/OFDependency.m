@@ -1,72 +1,31 @@
 #import "OFDependency.h"
-
-static NSMutableDictionary *dependencies = nil;
+#import "__OFPrivateServiceLocator.h"
 
 @implementation OFDependency
 
-+ (void)initialize {
-  static dispatch_once_t once;
-  dispatch_once(&once, ^{
-    dependencies = [NSMutableDictionary new];
-  });
-}
-
 #pragma mark - By Key
 
-+ (void)registerWithKey:(NSString *)key mode:(OFDependencyMode)mode constructor:(id (^)(void))constructor {
-  id (^resolver)(void);
-  switch (mode) {
-    case OFDependencyModeFactory:
-      resolver = constructor;
-      break;
-    case OFDependencyModeSingleton: {
-      __block id strongInstance;
-      resolver = ^id{
-        if (strongInstance) {
-          return strongInstance;
-        } else {
-          strongInstance = constructor();
-          return strongInstance;
-        }
-      };
-      break;
-    }
-    case OFDependencyModeWeakSingleton: {
-      __weak __block id weakInstance;
-      resolver = ^id{
-        if (weakInstance) {
-          return weakInstance;
-        } else {
-          id strongInstance = constructor();
-          weakInstance = strongInstance;
-          return strongInstance;
-        }
-      };
-      break;
-    }
-  }
-  dependencies[key] = [resolver copy];
++ (void)registerWithKey:(NSString *)key lifetime:(OFDependencyLifetime)lifetime constructor:(id (^)(void))constructor {
+  [__OFPrivateServiceLocator registerServiceForWithKey:key lifetime:(NSInteger)lifetime constructor:constructor];
 }
 
 + (id)resolveByKey:(NSString *)key {
-  id (^resolver)(void) = dependencies[key];
-  NSAssert(resolver, @"No registration for key %@", key);
-  return resolver();
+  return [__OFPrivateServiceLocator resolveServiceByKey:key];
 }
 
 + (BOOL)availableForKey:(NSString *)key {
-  return dependencies[key] != nil;
+  return [__OFPrivateServiceLocator availableServiceForKey:key];
 }
 
 + (void)removeForKey:(NSString *)key {
-  dependencies[key] = nil;
+  [__OFPrivateServiceLocator removeServiceForKey:key];
 }
 
 #pragma mark - By Class
 
-+ (void)registerWithClass:(Class)class mode:(OFDependencyMode)mode constructor:(id (^)(void))constructor {
++ (void)registerWithClass:(Class)class lifetime:(OFDependencyLifetime)lifetime constructor:(id (^)(void))constructor {
   NSString *dependencyKey = NSStringFromClass(class);
-  [self registerWithKey:dependencyKey mode:mode constructor:constructor];
+  [self registerWithKey:dependencyKey lifetime:lifetime constructor:constructor];
 }
 
 + (id)resolveByClass:(Class)class {
@@ -88,9 +47,9 @@ static NSMutableDictionary *dependencies = nil;
 
 #pragma mark - By Protocol
 
-+ (void)registerWithProtocol:(Protocol *)protocol mode:(OFDependencyMode)mode constructor:(id (^)(void))constructor {
++ (void)registerWithProtocol:(Protocol *)protocol lifetime:(OFDependencyLifetime)lifetime constructor:(id (^)(void))constructor {
   NSString *dependencyKey = NSStringFromProtocol(protocol);
-  [self registerWithKey:dependencyKey mode:mode constructor:constructor];
+  [self registerWithKey:dependencyKey lifetime:lifetime constructor:constructor];
 }
 
 + (id)resolveByProtocol:(Protocol *)protocol {

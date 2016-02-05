@@ -21,6 +21,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'Dependency' do |ss|
     ss.source_files = 'Source/Dependency/**/*.{h,m}'
+    ss.private_header_files = 'Source/Dependency/**/__OFPrivateServiceLocator.h'
   end
 
   s.subspec 'Log' do |ss|
