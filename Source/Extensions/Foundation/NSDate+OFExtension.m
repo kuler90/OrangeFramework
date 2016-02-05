@@ -24,7 +24,8 @@
 }
 
 - (NSDateComponents *)components {
-  return [[NSCalendar currentCalendar] components:NSUIntegerMax fromDate:self];
+  NSCalendarUnit unitFlags = (NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond | NSCalendarUnitNanosecond | NSCalendarUnitWeekday | NSCalendarUnitWeekOfMonth | NSCalendarUnitWeekOfYear | NSCalendarUnitTimeZone);
+  return [[NSCalendar currentCalendar] components:unitFlags fromDate:self];
 }
 
 - (NSString *)dateStringWithFormat:(NSString *)format {

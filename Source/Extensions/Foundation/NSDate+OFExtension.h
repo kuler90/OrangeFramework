@@ -8,8 +8,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (nullable instancetype)dateFromString:(NSString *)dateString format:(NSString *)format timezone:(NSTimeZone *)timezone;
 + (nullable instancetype)dateFromComponents:(NSDateComponents *)components;
 
-- (nullable instancetype)dateByModifyComponents:(void (^)(NSDateComponents *components))modifyBlock;
-- (NSDateComponents *)components;
+- (nullable instancetype)dateByModifyComponents:(void (^)(NSDateComponents *components))modifyBlock; // components with year, month, day, hour, minute, second, nanosecond, weekday, weekOfMonth, weekOfYear, timeZone
+- (NSDateComponents *)components; // year, month, day, hour, minute, second, nanosecond, weekday, weekOfMonth, weekOfYear, timeZone
 
 - (NSString *)dateStringWithFormat:(NSString *)format;
 - (NSString *)dateStringWithFormat:(NSString *)format timezone:(NSTimeZone *)timezone;
