@@ -24,7 +24,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Nimble: 4c353d43735b38b545cbb4cb91504588eb5de926
-  OrangeFramework: b43c39ca41393e5ec1ac36fdaf9c567a1683f938
+  OrangeFramework: 0ef3b5ccedd75604b4cef88efab6c48c75c89ed4
   Quick: 563d0f6ec5f72e394645adb377708639b7dd38ab
 
 COCOAPODS: 0.39.0

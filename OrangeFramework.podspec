@@ -34,10 +34,12 @@ Pod::Spec.new do |s|
 
   s.subspec 'Extensions' do |ss|
     ss.source_files = 'Source/Extensions/**/*.{swift,h,m}'
+    ss.public_header_files = 'Source/Dependency/**/OFExtensions.h'
   end
 
   s.subspec 'Segues' do |ss|
     ss.source_files = 'Source/Segues/**/*.{swift,h,m}'
+    ss.public_header_files = 'Source/Dependency/**/OFSegues.h'
   end
 
 end
