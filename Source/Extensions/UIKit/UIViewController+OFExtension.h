@@ -4,10 +4,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIViewController (OFExtension)
 
-- (IBAction)popAction:(id)sender;
-- (IBAction)dismissAction:(id)sender;
+- (IBAction)of_popAction:(id)sender;
+- (IBAction)of_dismissAction:(id)sender;
 
-- (nullable UIViewController *)topViewController;
+- (nullable UIViewController *)of_topViewController;
 
 @end
 

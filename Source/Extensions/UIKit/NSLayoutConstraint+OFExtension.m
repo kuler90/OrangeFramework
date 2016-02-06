@@ -2,11 +2,11 @@
 
 @implementation NSLayoutConstraint (OFExtension)
 
-- (NSInteger)constantPixel {
+- (NSInteger)of_ConstantInPixels {
   return self.constant * [UIScreen mainScreen].scale;
 }
 
-- (void)setConstantPixel:(NSInteger)constantPixel {
+- (void)setOf_ConstantInPixels:(NSInteger)constantPixel {
   self.constant = constantPixel / [UIScreen mainScreen].scale;
 }
 

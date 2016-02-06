@@ -6,14 +6,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef void (^OFAsyncBlockFinish)(void);
 
-+ (instancetype)blockOperationWithAsyncBlock:(void (^)(OFAsyncBlockFinish finish))asyncBlock;
-- (void)addExecutionAsyncBlock:(void (^)(OFAsyncBlockFinish finish))asyncBlock;
++ (instancetype)of_blockOperationWithAsyncBlock:(void (^)(OFAsyncBlockFinish finish))asyncBlock NS_SWIFT_NAME(init(of_asyncBlock:));
+- (void)of_addExecutionAsyncBlock:(void (^)(OFAsyncBlockFinish finish))asyncBlock;
 
 @end
 
 @interface NSOperationQueue (OFExtension)
 
-- (void)addOperationWithAsyncBlock:(void (^)(OFAsyncBlockFinish finish))asyncBlock;
+- (void)of_addOperationWithAsyncBlock:(void (^)(OFAsyncBlockFinish finish))asyncBlock;
 
 @end
 

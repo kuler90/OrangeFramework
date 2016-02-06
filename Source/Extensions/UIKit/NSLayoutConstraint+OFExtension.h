@@ -2,6 +2,6 @@
 
 @interface NSLayoutConstraint (OFExtension)
 
-@property (nonatomic) IBInspectable NSInteger constantPixel;
+@property (nonatomic) IBInspectable NSInteger of_ConstantInPixels;
 
 @end

@@ -4,7 +4,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSArray<ObjectType> (OFExtension)
 
-- (nullable ObjectType)safeObjectAtIndex:(NSUInteger)index;
+- (nullable ObjectType)of_safeObjectAtIndex:(NSUInteger)index;
 
 @end
 

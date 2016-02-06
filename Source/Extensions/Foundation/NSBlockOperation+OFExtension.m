@@ -2,13 +2,13 @@
 
 @implementation NSBlockOperation (OFExtension)
 
-+ (instancetype)blockOperationWithAsyncBlock:(void (^)(OFAsyncBlockFinish _Nonnull))asyncBlock {
++ (instancetype)of_blockOperationWithAsyncBlock:(void (^)(OFAsyncBlockFinish _Nonnull))asyncBlock {
   NSBlockOperation *blockOperation = [NSBlockOperation new];
-  [blockOperation addExecutionAsyncBlock:asyncBlock];
+  [blockOperation of_addExecutionAsyncBlock:asyncBlock];
   return blockOperation;
 }
 
-- (void)addExecutionAsyncBlock:(void (^)(OFAsyncBlockFinish _Nonnull))asyncBlock {
+- (void)of_addExecutionAsyncBlock:(void (^)(OFAsyncBlockFinish _Nonnull))asyncBlock {
   dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
   [self addExecutionBlock:^{
     asyncBlock(^{
@@ -22,8 +22,8 @@
 
 @implementation NSOperationQueue (OFExtension)
 
-- (void)addOperationWithAsyncBlock:(void (^)(OFAsyncBlockFinish _Nonnull))asyncBlock {
-  [self addOperation:[NSBlockOperation blockOperationWithAsyncBlock:asyncBlock]];
+- (void)of_addOperationWithAsyncBlock:(void (^)(OFAsyncBlockFinish _Nonnull))asyncBlock {
+  [self addOperation:[NSBlockOperation of_blockOperationWithAsyncBlock:asyncBlock]];
 }
 
 @end

@@ -1,6 +1,5 @@
 import Foundation
 
-// MARK: Comparable
 extension NSDate: Comparable {}
 
 public func ==(lhs: NSDate, rhs: NSDate) -> Bool {

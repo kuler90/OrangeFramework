@@ -4,11 +4,11 @@
 
 #pragma mark - Reading Time
 
-- (NSTimeInterval)readingTime {
-  return [self readingTimeWithSpeed:250];
+- (NSTimeInterval)of_readingTime {
+  return [self of_readingTimeWithSpeed:200];
 }
 
-- (NSTimeInterval)readingTimeWithSpeed:(NSUInteger)speed {
+- (NSTimeInterval)of_readingTimeWithSpeed:(NSUInteger)speed {
   NSMutableArray *words = [[self componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] mutableCopy];
   [words removeObject:@""];
   return words.count / (speed * 60.0);
@@ -16,11 +16,11 @@
 
 #pragma mark - Regex
 
-- (BOOL)matchRegex:(NSString *)pattern {
+- (BOOL)of_matchRegex:(NSString *)pattern {
   return [[NSPredicate predicateWithFormat:@"SELF MATCHES %@", pattern] evaluateWithObject:self];
 }
 
-- (NSString *)firstMatchOfRegex:(NSString *)pattern {
+- (NSString *)of_firstMatchOfRegex:(NSString *)pattern {
   NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:NULL];
   NSTextCheckingResult *match = [regex firstMatchInString:self options:0 range:NSMakeRange(0, self.length)];
   if (match == nil) {
@@ -29,7 +29,7 @@
   return [self substringWithRange:match.range];
 }
 
-- (NSArray<NSString *> *)allMatchesOfRegex:(NSString *)pattern {
+- (NSArray<NSString *> *)of_allMatchesOfRegex:(NSString *)pattern {
   NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:NULL];
   NSArray *matches = [regex matchesInString:self options:0 range:NSMakeRange(0, self.length)];
   if (matches == nil) {
@@ -42,11 +42,11 @@
   return [substrings copy];
 }
 
-- (BOOL)matchEmailString {
-  return [self matchRegex:@"^[_A-Za-z0-9-+]+(\\.[_A-Za-z0-9-+]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z‌​]{2,})$"];
+- (BOOL)of_matchEmailString {
+  return [self of_matchRegex:@"^[_A-Za-z0-9-+]+(\\.[_A-Za-z0-9-+]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z‌​]{2,})$"];
 }
 
-- (BOOL)matchUrlString {
+- (BOOL)of_matchUrlString {
   return [NSURL URLWithString:self] != nil;
 }
 

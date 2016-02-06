@@ -2,7 +2,7 @@
 
 @implementation NSArray (OFExtension)
 
-- (id)safeObjectAtIndex:(NSUInteger)index {
+- (id)of_safeObjectAtIndex:(NSUInteger)index {
   return index < self.count ? [self objectAtIndex:index] : nil;
 }
 

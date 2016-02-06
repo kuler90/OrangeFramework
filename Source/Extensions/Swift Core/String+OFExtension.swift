@@ -1,5 +1,5 @@
 public extension String {
   
-  public var length: Int { return self.characters.count }
+  public var of_length: Int { return self.characters.count }
   
 }

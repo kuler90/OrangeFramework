@@ -2,15 +2,15 @@
 
 @implementation UIViewController (OFExtension)
 
-- (IBAction)popAction:(id)sender {
+- (IBAction)of_popAction:(id)sender {
   [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (IBAction)dismissAction:(id)sender {
+- (IBAction)of_dismissAction:(id)sender {
   [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (UIViewController *)topViewController {
+- (UIViewController *)of_topViewController {
   UIViewController *topVC = [UIApplication sharedApplication].keyWindow.rootViewController;
   while (topVC.presentedViewController) {
     topVC = topVC.presentedViewController;
