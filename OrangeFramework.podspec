@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.license          = 'MIT'
   s.author           = { "Roman Kulesha" => "kulesha.r@gmail.com" }
   s.source           = { :git => "https://github.com/kuler90/OrangeFramework.git", :tag => s.version.to_s }
-  s.default_subspecs = 'Dependency', 'Log', 'SystemInfo', 'Extensions', 'Segues'
+  s.default_subspecs = 'Dependency', 'Log', 'Device', 'Extensions', 'Segues'
   s.platform     = :ios, '8.0'
   s.requires_arc = true
   s.xcconfig = { 'SWIFT_INSTALL_OBJC_HEADER' => 'NO', 'EMBEDDED_CONTENT_CONTAINS_SWIFT' => 'NO' }
@@ -28,8 +28,8 @@ Pod::Spec.new do |s|
     ss.source_files = 'Source/Log/**/*.{swift,h,m}'
   end
 
-  s.subspec 'SystemInfo' do |ss|
-    ss.source_files = 'Source/SystemInfo/**/*.{swift,h,m}'
+  s.subspec 'Device' do |ss|
+    ss.source_files = 'Source/Device/**/*.{swift,h,m}'
   end
 
   s.subspec 'Extensions' do |ss|
