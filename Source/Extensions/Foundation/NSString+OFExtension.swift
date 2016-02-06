@@ -14,7 +14,7 @@ public extension String {
   
   // MARK: - Reading Time
   
-  public func of_readingTime(speed speed: UInt = 250) -> NSTimeInterval { // speed = words per minute. default speed = 250
+  public func of_readingTime(speed speed: UInt = 200) -> NSTimeInterval { // speed = words per minute. default speed is 200
     return (self as NSString).of_readingTimeWithSpeed(speed)
   }
   

@@ -2,8 +2,8 @@
 
 @interface UIView (OFExtension)
 
-@property (nonatomic) IBInspectable CGFloat of_CornerRadius;
-@property (nonatomic) IBInspectable CGFloat of_BorderWidth;
-@property (nonatomic, nullable) IBInspectable UIColor *of_BorderColor;
+@property (nonatomic) IBInspectable CGFloat of_CornerRadius; // for storyboard
+@property (nonatomic) IBInspectable CGFloat of_BorderWidth; // for storyboard
+@property (nonatomic, nullable) IBInspectable UIColor *of_BorderColor; // for storyboard
 
 @end
