@@ -2,27 +2,27 @@
 
 @implementation UIView (OFExtension)
 
-- (void)setOf_CornerRadius:(CGFloat)cornerRadius {
+- (void)setOF_cornerRadius:(CGFloat)cornerRadius {
   self.layer.cornerRadius = cornerRadius;
 }
 
-- (CGFloat)of_CornerRadius {
+- (CGFloat)OF_cornerRadius {
   return self.layer.cornerRadius;
 }
 
-- (void)setOf_BorderWidth:(CGFloat)borderWidth {
+- (void)setOF_borderWidth:(CGFloat)borderWidth {
   self.layer.borderWidth = borderWidth;
 }
 
-- (CGFloat)of_BorderWidth {
+- (CGFloat)OF_borderWidth {
   return self.layer.borderWidth;
 }
 
-- (void)setOf_BorderColor:(UIColor *)borderColor {
+- (void)setOF_borderColor:(UIColor *)borderColor {
   self.layer.borderColor = borderColor.CGColor;
 }
 
-- (UIColor *)of_BorderColor {
+- (UIColor *)OF_borderColor {
   return self.layer.borderColor != nil ? [UIColor colorWithCGColor:self.layer.borderColor] : nil;
 }
 

@@ -2,7 +2,7 @@
 
 @interface UITableViewCell (OFExtension)
 
-@property (nonatomic) IBInspectable CGFloat of_SeparatorL; // for storyboard
-@property (nonatomic) IBInspectable CGFloat of_SeparatorR; // for storyboard
+@property (nonatomic) IBInspectable CGFloat OF_separatorL; // for storyboard
+@property (nonatomic) IBInspectable CGFloat OF_separatorR; // for storyboard
 
 @end

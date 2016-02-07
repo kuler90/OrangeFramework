@@ -3,11 +3,11 @@
 
 @implementation UITableViewCell (OFExtension)
 
-- (CGFloat)of_SeparatorL {
+- (CGFloat)OF_separatorL {
   return self.separatorInset.left;
 }
 
-- (void)setOf_SeparatorL:(CGFloat)separatorL {
+- (void)setOF_separatorL:(CGFloat)separatorL {
   self.separatorInset = OFEdgeInsetsModify(self.separatorInset, ^(UIEdgeInsets * _Nonnull insets) {
     insets->left = separatorL;
   });
@@ -16,11 +16,11 @@
   });
 }
 
-- (CGFloat)of_SeparatorR {
+- (CGFloat)OF_separatorR {
   return self.separatorInset.right;
 }
 
-- (void)setOf_SeparatorR:(CGFloat)separatorR {
+- (void)setOF_separatorR:(CGFloat)separatorR {
   self.separatorInset = OFEdgeInsetsModify(self.separatorInset, ^(UIEdgeInsets * _Nonnull insets) {
     insets->right = separatorR;
   });
