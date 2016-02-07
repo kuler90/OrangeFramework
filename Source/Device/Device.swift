@@ -1,2 +1,2 @@
 
-typealias Device = OFDevice
+public typealias Device = OFDevice
