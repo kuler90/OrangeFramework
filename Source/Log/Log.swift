@@ -9,7 +9,14 @@ public typealias LogFormatter = ((rawMessage: String?, flag: LogFlag, function: 
 
 public class Log {
   
-  // set which message should be print, by default print all
+  /// default is true
+  public static var enabled: Bool = true {
+    didSet {
+      OFLogSetEnabled(enabled)
+    }
+  }
+  
+  /// set which message should be print, by default print all
   public class func setHandler(handler: LogHandler) {
     OFLogSetHandler { handler(lazyMessage: $0, flag: LogFlag(rawValue: $1.rawValue)!) }
   }
