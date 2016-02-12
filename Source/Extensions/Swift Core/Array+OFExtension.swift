@@ -10,7 +10,7 @@ public extension Array {
 public extension Array where Element: Equatable {
   
   public mutating func of_remove(element: Element) {
-    for index in 0..<count where self[index] == element {
+    for index in (0..<count).reverse() where self[index] == element {
       self.removeAtIndex(index)
     }
   }
