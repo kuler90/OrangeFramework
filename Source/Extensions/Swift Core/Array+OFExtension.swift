@@ -1,23 +1,17 @@
-public extension Array {
 
-  public subscript(safe index: Index) -> Element? {
+public extension Array {
+  
+  public func of_safeElement(index: Int) -> Element? {
     return index < count ? self[index] : nil
   }
   
-  public func indexOfObject<T: Equatable>(element: T) -> Int? {
-    for index in 0..<count {
-      if let e = self[index] as? T where e == element {
-        return index
-      }
-    }
-    return nil
-  }
+}
+
+public extension Array where Element: Equatable {
   
-  public mutating func remove<T: Equatable>(element: T) {
-    for index in 0..<count {
-      if let e = self[index] as? T where e == element {
-        self.removeAtIndex(index)
-      }
+  public mutating func of_remove(element: Element) {
+    for index in (0..<count).reverse() where self[index] == element {
+      self.removeAtIndex(index)
     }
   }
   

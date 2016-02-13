@@ -4,11 +4,11 @@ import UIKit
 
 public extension CGPoint {
   
-  public func with(x x: CGFloat) -> CGPoint {
+  public func of_with(x x: CGFloat) -> CGPoint {
     return CGPoint(x: x, y: y)
   }
   
-  public func with(y y: CGFloat) -> CGPoint {
+  public func of_with(y y: CGFloat) -> CGPoint {
     return CGPoint(x: x, y: y)
   }
   
@@ -18,11 +18,11 @@ public extension CGPoint {
 
 public extension CGSize {
   
-  public func with(width width: CGFloat) -> CGSize {
+  public func of_with(width width: CGFloat) -> CGSize {
     return CGSize(width: width, height: height)
   }
   
-  public func with(height height: CGFloat) -> CGSize {
+  public func of_with(height height: CGFloat) -> CGSize {
     return CGSize(width: width, height: height)
   }
   
@@ -32,44 +32,36 @@ public extension CGSize {
 
 public extension CGRect {
   
-  public var x: CGFloat {
-    get { return origin.x }
-  }
-
-  public var y: CGFloat {
-    get { return origin.y }
+  public func of_with(x x: CGFloat) -> CGRect {
+    return CGRect(x: x, y: minY, width: width, height: height)
   }
   
-  public func with(x x: CGFloat) -> CGRect {
-    return CGRect(x: x, y: y, width: width, height: height)
+  public func of_with(y y: CGFloat) -> CGRect {
+    return CGRect(x: minX, y: y, width: width, height: height)
   }
   
-  public func with(y y: CGFloat) -> CGRect {
-    return CGRect(x: x, y: y, width: width, height: height)
+  public func of_with(width width: CGFloat) -> CGRect {
+    return CGRect(x: minX, y: minY, width: width, height: height)
   }
   
-  public func with(width width: CGFloat) -> CGRect {
-    return CGRect(x: x, y: y, width: width, height: height)
+  public func of_with(height height: CGFloat) -> CGRect {
+    return CGRect(x: minX, y: minY, width: width, height: height)
   }
   
-  public func with(height height: CGFloat) -> CGRect {
-    return CGRect(x: x, y: y, width: width, height: height)
+  public func of_with(midX midX: CGFloat) -> CGRect {
+    return CGRect(x: midX - width * 0.5, y: minY, width: width, height: height)
   }
   
-  public func with(midX midX: CGFloat) -> CGRect {
-    return CGRect(x: midX - width * 0.5, y: y, width: width, height: height)
+  public func of_with(midY midY: CGFloat) -> CGRect {
+    return CGRect(x: minX, y: midY - height * 0.5, width: width, height: height)
   }
   
-  public func with(midY midY: CGFloat) -> CGRect {
-    return CGRect(x: x, y: y, width: width, height: midY - height * 0.5)
+  public func of_with(maxX maxX: CGFloat) -> CGRect {
+    return CGRect(x: maxX - width, y: minY, width: width, height: height)
   }
   
-  public func with(maxX maxX: CGFloat) -> CGRect {
-    return CGRect(x: maxX - width, y: y, width: width, height: height)
-  }
-  
-  public func with(maxY maxY: CGFloat) -> CGRect {
-    return CGRect(x: x, y: maxY - height, width: width, height: height)
+  public func of_with(maxY maxY: CGFloat) -> CGRect {
+    return CGRect(x: minX, y: maxY - height, width: width, height: height)
   }
   
 }
@@ -78,11 +70,11 @@ public extension CGRect {
 
 public extension CGVector {
   
-  public func with(dx dx: CGFloat) -> CGVector {
+  public func of_with(dx dx: CGFloat) -> CGVector {
     return CGVector(dx: dx, dy: dy)
   }
   
-  public func with(dy dy: CGFloat) -> CGVector {
+  public func of_with(dy dy: CGFloat) -> CGVector {
     return CGVector(dx: dx, dy: dy)
   }
   
@@ -92,11 +84,11 @@ public extension CGVector {
 
 public extension UIOffset {
   
-  public func with(horizontal horizontal: CGFloat) -> UIOffset {
+  public func of_with(horizontal horizontal: CGFloat) -> UIOffset {
     return UIOffset(horizontal: horizontal, vertical: vertical)
   }
   
-  public func with(vertical vertical: CGFloat) -> UIOffset {
+  public func of_with(vertical vertical: CGFloat) -> UIOffset {
     return UIOffset(horizontal: horizontal, vertical: vertical)
   }
 
@@ -106,19 +98,19 @@ public extension UIOffset {
 
 public extension UIEdgeInsets {
   
-  public func with(top top: CGFloat) -> UIEdgeInsets {
+  public func of_with(top top: CGFloat) -> UIEdgeInsets {
     return UIEdgeInsets(top: top, left: left, bottom: bottom, right: right)
   }
   
-  public func with(left left: CGFloat) -> UIEdgeInsets {
+  public func of_with(left left: CGFloat) -> UIEdgeInsets {
     return UIEdgeInsets(top: top, left: left, bottom: bottom, right: right)
   }
   
-  public func with(bottom bottom: CGFloat) -> UIEdgeInsets {
+  public func of_with(bottom bottom: CGFloat) -> UIEdgeInsets {
     return UIEdgeInsets(top: top, left: left, bottom: bottom, right: right)
   }
   
-  public func with(right right: CGFloat) -> UIEdgeInsets {
+  public func of_with(right right: CGFloat) -> UIEdgeInsets {
     return UIEdgeInsets(top: top, left: left, bottom: bottom, right: right)
   }
   

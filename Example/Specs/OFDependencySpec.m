@@ -13,9 +13,9 @@ describe(@"dependency", ^{
   describe(@"by key", ^{
     NSString *dependencyKey = @"some_key";
     context(@"when registered", ^{
-      context(@"on factory mode", ^{
+      context(@"with transient lifetime", ^{
         beforeEach(^{
-          [OFDependency registerWithKey:dependencyKey mode:OFDependencyModeFactory constructor:^id _Nonnull{
+          [OFDependency registerWithKey:dependencyKey lifetime:OFDependencyLifetimeTransient constructor:^id _Nonnull{
             return [NSObject new];
           }];
         });
@@ -28,9 +28,9 @@ describe(@"dependency", ^{
           expect(instance1).toNot(beIdenticalTo(instance2));
         });
       });
-      context(@"on singleton mode", ^{
+      context(@"with singleton lifetime", ^{
         beforeEach(^{
-          [OFDependency registerWithKey:dependencyKey mode:OFDependencyModeSingleton constructor:^id _Nonnull{
+          [OFDependency registerWithKey:dependencyKey lifetime:OFDependencyLifetimeSingleton constructor:^id _Nonnull{
             return [NSObject new];
           }];
         });
@@ -43,9 +43,9 @@ describe(@"dependency", ^{
           expect(instance1).to(beIdenticalTo(instance2));
         });
       });
-      context(@"on weak singleton mode", ^{
+      context(@"with weak singleton lifetime", ^{
         beforeEach(^{
-          [OFDependency registerWithKey:dependencyKey mode:OFDependencyModeWeakSingleton constructor:^id _Nonnull{
+          [OFDependency registerWithKey:dependencyKey lifetime:OFDependencyLifetimeWeakSingleton constructor:^id _Nonnull{
             return [NSObject new];
           }];
         });
@@ -70,7 +70,7 @@ describe(@"dependency", ^{
     });
     context(@"when removed", ^{
       beforeEach(^{
-        [OFDependency registerWithKey:dependencyKey mode:OFDependencyModeFactory constructor:^id _Nonnull{
+        [OFDependency registerWithKey:dependencyKey lifetime:OFDependencyLifetimeTransient constructor:^id _Nonnull{
           return [NSObject new];
         }];
         [OFDependency removeForKey:dependencyKey];
@@ -87,7 +87,7 @@ describe(@"dependency", ^{
   describe(@"by class", ^{
     context(@"when constructor result is kind of registered class", ^{
       it(@"resolve", ^{
-        [OFDependency registerWithClass:[TestClass class] mode:OFDependencyModeFactory constructor:^id _Nonnull{
+        [OFDependency registerWithClass:[TestClass class] lifetime:OFDependencyLifetimeTransient constructor:^id _Nonnull{
           return [TestClass new];
         }];
         expect([OFDependency resolveByClass:[TestClass class]]).to(beAKindOf([TestClass class]));
@@ -95,7 +95,7 @@ describe(@"dependency", ^{
     });
     context(@"when constructor result is NOT kind of registered class", ^{
       it(@"resolve with exception", ^{
-        [OFDependency registerWithClass:[TestClass class] mode:OFDependencyModeFactory constructor:^id _Nonnull{
+        [OFDependency registerWithClass:[TestClass class] lifetime:OFDependencyLifetimeTransient constructor:^id _Nonnull{
           return [NSString new];
         }];
         expect([OFDependency resolveByClass:[TestClass class]]).to(raiseException());
@@ -106,7 +106,7 @@ describe(@"dependency", ^{
   describe(@"by protocol", ^{
     context(@"when constructor result class conformed to registered protocol", ^{
       it(@"resolve", ^{
-        [OFDependency registerWithProtocol:@protocol(TestProtocol) mode:OFDependencyModeFactory constructor:^id _Nonnull{
+        [OFDependency registerWithProtocol:@protocol(TestProtocol) lifetime:OFDependencyLifetimeTransient constructor:^id _Nonnull{
           return [TestClass new];
         }];
         expect(@([[OFDependency resolveByProtocol:@protocol(TestProtocol)] conformsToProtocol:@protocol(TestProtocol)])).to(beTrue());
@@ -114,7 +114,7 @@ describe(@"dependency", ^{
     });
     context(@"when constructor result class NOT conformed to registered protocol", ^{
       it(@"resolve with exception", ^{
-        [OFDependency registerWithProtocol:@protocol(TestProtocol) mode:OFDependencyModeFactory constructor:^id _Nonnull{
+        [OFDependency registerWithProtocol:@protocol(TestProtocol) lifetime:OFDependencyLifetimeTransient constructor:^id _Nonnull{
           return [NSString new];
         }];
         expect([OFDependency resolveByProtocol:@protocol(TestProtocol)]).to(raiseException());

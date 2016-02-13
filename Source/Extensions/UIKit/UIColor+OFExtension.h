@@ -4,11 +4,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIColor (OFExtension)
 
-+ (instancetype)colorWith8BitRed:(NSUInteger)red green:(NSUInteger)green blue:(NSUInteger)blue NS_SWIFT_UNAVAILABLE("Use swift init instead");
-+ (instancetype)colorWith8BitRed:(NSUInteger)red green:(NSUInteger)green blue:(NSUInteger)blue alpha:(CGFloat)alpha NS_SWIFT_UNAVAILABLE("Use swift init instead");
++ (instancetype)of_colorWithRed:(NSUInteger)red green:(NSUInteger)green blue:(NSUInteger)blue NS_SWIFT_NAME(init(_:_:_:));
++ (instancetype)of_colorWithRed:(NSUInteger)red green:(NSUInteger)green blue:(NSUInteger)blue alpha:(CGFloat)alpha NS_SWIFT_NAME(init(_:_:_:_:));
 
-+ (nullable instancetype)colorWithHexString:(NSString *)hexString;
-+ (nullable instancetype)colorWithHexString:(NSString *)hexString alpha:(CGFloat)alpha;
++ (nullable instancetype)of_colorWithHexString:(NSString *)hexString NS_SWIFT_NAME(init(of_hexString:));
++ (nullable instancetype)of_colorWithHexString:(NSString *)hexString alpha:(CGFloat)alpha NS_SWIFT_NAME(init(of_hexString:alpha:));
 
 @end
 

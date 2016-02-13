@@ -4,15 +4,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSString (OFExtension)
 
-- (NSTimeInterval)readingTime; // speed = 250
-- (NSTimeInterval)readingTimeWithSpeed:(NSUInteger)speed; // speed = words per minute
+- (NSTimeInterval)of_readingTime; // speed is 200
+- (NSTimeInterval)of_readingTimeWithSpeed:(NSUInteger)speed; // speed is words per minute
 
-- (BOOL)matchRegex:(NSString *)pattern;
-- (nullable NSString *)firstMatchOfRegex:(NSString *)pattern;
-- (NSArray<NSString *> *)allMatchesOfRegex:(NSString *)pattern;
+- (BOOL)of_matchRegex:(NSString *)pattern;
+- (nullable NSString *)of_firstMatchOfRegex:(NSString *)pattern;
+- (NSArray<NSString *> *)of_allMatchesOfRegex:(NSString *)pattern;
 
-- (BOOL)matchEmailString;
-- (BOOL)matchUrlString;
+- (BOOL)of_matchEmailString;
+- (BOOL)of_matchUrlString;
 
 @end
 

@@ -1,15 +1,6 @@
 #import <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSInteger, OFLogLevel)
-{
-  OFLogLevelOff = -1,
-  OFLogLevelError,
-  OFLogLevelWarning,
-  OFLogLevelInfo,
-  OFLogLevelDebug,
-  OFLogLevelVerbose,
-  OFLogLevelAll
-};
+NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSInteger, OFLogFlag)
 {
@@ -20,47 +11,22 @@ typedef NS_ENUM(NSInteger, OFLogFlag)
   OFLogFlagVerbose
 };
 
-#define OFLogError(format, ...) [OFLog log:[NSString stringWithFormat:format,##__VA_ARGS__] withFlag:OFLogFlagError function:__func__ file:__FILE__ line:__LINE__]
-#define OFLogWarning(format,...) [OFLog log:[NSString stringWithFormat:format,##__VA_ARGS__] withFlag:OFLogFlagWarning function:__func__ file:__FILE__ line:__LINE__]
-#define OFLogInfo(format, ...) [OFLog log:[NSString stringWithFormat:format,##__VA_ARGS__] withFlag:OFLogFlagInfo function:__func__ file:__FILE__ line:__LINE__]
-#define OFLogDebug(format, ...) [OFLog log:[NSString stringWithFormat:format,##__VA_ARGS__] withFlag:OFLogFlagDebug function:__func__ file:__FILE__ line:__LINE__]
-#define OFLogVerbose(format, ...) [OFLog log:[NSString stringWithFormat:format,##__VA_ARGS__] withFlag:OFLogFlagVerbose function:__func__ file:__FILE__ line:__LINE__]
+typedef NSString * _Nonnull (^OFLogLazyMessage)(void);
+typedef BOOL (^OFLogHandler)(OFLogLazyMessage lazyFormattedMessage, NSString * _Nullable rawMessage, OFLogFlag flag, NSString *function, NSString *file, unsigned int line);
 
-#define OFLogErrorObject(object) [OFLog log:object withFlag:OFLogFlagError function:__func__ file:__FILE__ line:__LINE__]
-#define OFLogWarningObject(object) [OFLog log:object withFlag:OFLogFlagWarning function:__func__ file:__FILE__ line:__LINE__]
-#define OFLogInfoObject(object) [OFLog log:object withFlag:OFLogFlagInfo function:__func__ file:__FILE__ line:__LINE__]
-#define OFLogDebugObject(object) [OFLog log:object withFlag:OFLogFlagDebug function:__func__ file:__FILE__ line:__LINE__]
-#define OFLogVerboseObject(object) [OFLog log:object withFlag:OFLogFlagVerbose function:__func__ file:__FILE__ line:__LINE__]
+FOUNDATION_EXPORT void OFLog(NSString * _Nullable message, OFLogFlag flag, NSString *function, NSString *file, unsigned int line);
+FOUNDATION_EXPORT void OFLogSetHandler(OFLogHandler _Nullable handler); // set which message should be print in console, default handler return YES in DEBUG and NO otherwise
 
-NS_ASSUME_NONNULL_BEGIN
+#define OFLogError(format, ...) OFLog([NSString stringWithFormat:format,##__VA_ARGS__], OFLogFlagError, __func__, __FILE__, __LINE__)
+#define OFLogWarning(format,...) OFLog([NSString stringWithFormat:format,##__VA_ARGS__], OFLogFlagWarning, __func__, __FILE__, __LINE__)
+#define OFLogInfo(format, ...) OFLog([NSString stringWithFormat:format,##__VA_ARGS__], OFLogFlagInfo, __func__, __FILE__, __LINE__)
+#define OFLogDebug(format, ...) OFLog([NSString stringWithFormat:format,##__VA_ARGS__], OFLogFlagDebug, __func__, __FILE__, __LINE__)
+#define OFLogVerbose(format, ...) OFLog([NSString stringWithFormat:format,##__VA_ARGS__], OFLogFlagVerbose, __func__, __FILE__, __LINE__)
 
-@interface OFLogger : NSObject
-
-typedef void (^OFLogPrinter)(OFLogFlag flag, NSString *message);
-typedef NSString * _Nonnull (^OFLogFormatter)(_Nullable id object, OFLogFlag flag, NSString *function, NSString *file, unsigned int line);
-
-@property (nonatomic) OFLogLevel logLevel;
-@property (nonatomic, copy) OFLogPrinter printer;
-@property (nonatomic, copy, null_resettable) OFLogFormatter formatter;
-
-+ (instancetype)consoleLoggerWithLogLevel:(OFLogLevel)logLevel NS_SWIFT_NAME(consoleLogger(logLevel:));
-
-- (instancetype)init NS_UNAVAILABLE;
-- (instancetype)initWithLogLevel:(OFLogLevel)logLevel printer:(OFLogPrinter)printer formatter:(nullable OFLogFormatter)formatter NS_DESIGNATED_INITIALIZER;
-- (instancetype)initWithLogLevel:(OFLogLevel)logLevel printer:(OFLogPrinter)printer;
-
-- (void)log:(nullable id)object withFlag:(OFLogFlag)flag function:(const char *)function file:(const char *)file line:(unsigned int)line NS_REFINED_FOR_SWIFT;
-
-@end
-
-@interface OFLog : NSObject
-
-+ (void)registerLogger:(OFLogger *)logger;
-+ (void)removeLogger:(OFLogger *)logger;
-+ (NSArray<OFLogger *> *)loggers;
-
-+ (void)log:(nullable id)object withFlag:(OFLogFlag)flag function:(const char *)function file:(const char *)file line:(unsigned int)line NS_SWIFT_UNAVAILABLE("Use swift extension methods instead");
-
-@end
+#define OFLogErrorObject(object) OFLog([object debugDescription], OFLogFlagError, __func__, __FILE__, __LINE__)
+#define OFLogWarningObject(object) OFLog([object debugDescription], OFLogFlagWarning, __func__, __FILE__, __LINE__)
+#define OFLogInfoObject(object) OFLog([object debugDescription], OFLogFlagInfo, __func__, __FILE__, __LINE__)
+#define OFLogDebugObject(object) OFLog([object debugDescription], OFLogFlagDebug, __func__, __FILE__, __LINE__)
+#define OFLogVerboseObject(object) OFLog([object debugDescription], OFLogFlagVerbose, __func__, __FILE__, __LINE__)
 
 NS_ASSUME_NONNULL_END
