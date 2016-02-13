@@ -3,8 +3,8 @@
 OrangeFramework is a collection of components for fast and high quality developing mobile apps on Objective-C and Swift. It was designed with a focus on simplicity and flexibility. All components are fully independent and can be used separately.
 
 OrangeFramework includes:
-* Dependency. Light-weight iOC container for dependency injection.
-* Log. Simple and flexible logger.
+* Dependency. Simple iOC container for dependency injection.
+* Log. Very simple and flexible logger.
 * Device. Component for detecting the running device info.
 * Extensions. Collection of useful Objective-C categories and Swift extensions.
 * Segues. A few needful segues. 
