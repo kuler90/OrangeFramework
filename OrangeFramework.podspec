@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.summary          = "Powerful framework aimed at fast and high quality developing mobile apps on Objective-C and Swift."
   s.description      = <<-DESC
                        OrangeFramework is a collection of components for fast and high quality developing mobile apps on Objective-C and Swift.
-                       It includes a light-weight iOC container (used for dependency injection), flexible logger, powerful extensions and simple system info getter.
+                       It includes a light-weight iOC container for dependency injection, simple logger, compoment for detecting running device, useful extensions and segues.
                        DESC
   s.homepage         = "https://github.com/kuler90/OrangeFramework"
   s.license          = 'MIT'
