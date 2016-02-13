@@ -12,13 +12,10 @@ typedef NS_ENUM(NSInteger, OFLogFlag)
 };
 
 typedef NSString * _Nonnull (^OFLogLazyMessage)(void);
-typedef BOOL (^OFLogHandler)(OFLogLazyMessage lazyFormattedMessage, OFLogFlag flag);
-typedef NSString * _Nonnull (^OFLogFormatter)(NSString * _Nullable rawMessage, OFLogFlag flag, NSString *function, NSString *file, unsigned int line);
+typedef BOOL (^OFLogHandler)(OFLogLazyMessage lazyFormattedMessage, NSString * _Nullable rawMessage, OFLogFlag flag, NSString *function, NSString *file, unsigned int line);
 
-FOUNDATION_EXPORT void OFLogSetEnabled(BOOL enabled); // by default is enabled
-FOUNDATION_EXPORT void OFLogSetHandler(OFLogHandler handler); // set which message should be print, by default print all
-FOUNDATION_EXPORT void OFLogSetFormatter(OFLogFormatter formatter);
 FOUNDATION_EXPORT void OFLog(NSString * _Nullable message, OFLogFlag flag, NSString *function, NSString *file, unsigned int line);
+FOUNDATION_EXPORT void OFLogSetHandler(OFLogHandler _Nullable handler); // set which message should be print in console, default handler return YES in DEBUG and NO otherwise
 
 #define OFLogError(format, ...) OFLog([NSString stringWithFormat:format,##__VA_ARGS__], OFLogFlagError, __func__, __FILE__, __LINE__)
 #define OFLogWarning(format,...) OFLog([NSString stringWithFormat:format,##__VA_ARGS__], OFLogFlagWarning, __func__, __FILE__, __LINE__)
