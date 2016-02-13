@@ -29,17 +29,15 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Device' do |ss|
-    ss.source_files = 'Source/Device/**/*.{swift,h,m}'
+    ss.source_files = 'Source/Device/**/*.{h,m}'
   end
 
   s.subspec 'Extensions' do |ss|
     ss.source_files = 'Source/Extensions/**/*.{h,m}'
-    ss.public_header_files = 'Source/Dependency/**/OFExtensions.h'
   end
 
   s.subspec 'Segues' do |ss|
     ss.source_files = 'Source/Segues/**/*.{h,m}'
-    ss.public_header_files = 'Source/Dependency/**/OFSegues.h'
   end
 
 end

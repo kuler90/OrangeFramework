@@ -19,7 +19,7 @@ use_frameworks!
 pod 'OrangeFramework'
 ```
 
-If you don't want use frameworks or support Swift you can install only Objective-C version:
+If you don't want use frameworks and support Swift you can install only Objective-C version:
 
 ```ruby
 platform :ios, '8.0'
