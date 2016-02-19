@@ -7,6 +7,7 @@
 #import "NSDate+OFExtension.h"
 #import "NSError+OFExtension.h"
 #import "NSString+OFExtension.h"
+#import "Warning+OFExtension.h"
 
 // UIKit
 #import "Geometry+OFExtension.h"
