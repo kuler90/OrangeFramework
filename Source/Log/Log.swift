@@ -1,38 +1,44 @@
 import Foundation
 
-public typealias LogFlag = OFLogFlag
-public typealias LogHandler = ((lazyFormattedMessage: () -> String, rawMessage: String?, flag: LogFlag, function: String, file: String, line: UInt32) -> Bool)
+public typealias LogLevel = OFLogLevel
+public typealias LogHandler = ((lazyFormattedMessage: () -> String, rawMessage: String?, level: LogLevel, function: String, file: String, line: UInt32) -> Bool)
 
 public class Log {
   
-  /// set which message should be print in console, default handler return true when DEBUG preprocessor symbol defined and false otherwise
+  /// log handler, decide which message should print, by default print all in DEBUG and nothing otherwise
   public class func setHandler(handler: LogHandler?) {
     OFLogSetHandler(handler)
   }
   
   public class func error(value: Any?, _ function: String = __FUNCTION__, _ file: String = __FILE__, _ line: UInt32 = __LINE__) {
-    let message: String? = (value == nil) ? nil : String(reflecting: value!)
-    OFLog(message, .Error, function, file, line)
+    OFLog("\(value)", LogLevel.Error, function, file, line)
   }
   
   public class func warning(value: Any?, _ function: String = __FUNCTION__, _ file: String = __FILE__, _ line: UInt32 = __LINE__) {
-    let message: String? = (value == nil) ? nil : String(reflecting: value!)
-    OFLog(message, .Warning, function, file, line)
+    OFLog("\(value)", LogLevel.Warning, function, file, line)
   }
   
   public class func info(value: Any?, _ function: String = __FUNCTION__, _ file: String = __FILE__, _ line: UInt32 = __LINE__) {
-    let message: String? = (value == nil) ? nil : String(reflecting: value!)
-    OFLog(message, .Info, function, file, line)
+    OFLog("\(value)", LogLevel.Info, function, file, line)
   }
   
   public class func debug(value: Any?, _ function: String = __FUNCTION__, _ file: String = __FILE__, _ line: UInt32 = __LINE__) {
-    let message: String? = (value == nil) ? nil : String(reflecting: value!)
-    OFLog(message, .Debug, function, file, line)
+    OFLog("\(value)", LogLevel.Debug, function, file, line)
   }
   
   public class func verbose(value: Any?, _ function: String = __FUNCTION__, _ file: String = __FILE__, _ line: UInt32 = __LINE__) {
-    let message: String? = (value == nil) ? nil : String(reflecting: value!)
-    OFLog(message, .Verbose, function, file, line)
+    OFLog("\(value)", LogLevel.Verbose, function, file, line)
   }
   
+}
+
+
+extension LogLevel: Comparable {}
+
+public func ==(lhs: LogLevel, rhs: LogLevel) -> Bool {
+  return lhs.rawValue == rhs.rawValue
+}
+
+public func <(lhs: LogLevel, rhs: LogLevel) -> Bool {
+  return lhs.rawValue < rhs.rawValue
 }
