@@ -11,7 +11,7 @@
 - (NSTimeInterval)of_readingTimeWithSpeed:(NSUInteger)speed {
   NSMutableArray *words = [[self componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] mutableCopy];
   [words removeObject:@""];
-  return words.count / (speed * 60.0);
+  return words.count * (60.0 / speed);
 }
 
 #pragma mark - Regex
