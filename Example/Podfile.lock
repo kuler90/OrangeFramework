@@ -1,16 +1,16 @@
 PODS:
   - Nimble (3.0.0)
-  - OrangeFramework (1.0.1):
-    - OrangeFramework/Dependency (= 1.0.1)
-    - OrangeFramework/Device (= 1.0.1)
-    - OrangeFramework/Extensions (= 1.0.1)
-    - OrangeFramework/Log (= 1.0.1)
-    - OrangeFramework/Segues (= 1.0.1)
-  - OrangeFramework/Dependency (1.0.1)
-  - OrangeFramework/Device (1.0.1)
-  - OrangeFramework/Extensions (1.0.1)
-  - OrangeFramework/Log (1.0.1)
-  - OrangeFramework/Segues (1.0.1)
+  - OrangeFramework (1.0.3):
+    - OrangeFramework/Dependency (= 1.0.3)
+    - OrangeFramework/Device (= 1.0.3)
+    - OrangeFramework/Extensions (= 1.0.3)
+    - OrangeFramework/Log (= 1.0.3)
+    - OrangeFramework/Segues (= 1.0.3)
+  - OrangeFramework/Dependency (1.0.3)
+  - OrangeFramework/Device (1.0.3)
+  - OrangeFramework/Extensions (1.0.3)
+  - OrangeFramework/Log (1.0.3)
+  - OrangeFramework/Segues (1.0.3)
   - Quick (0.8.0)
 
 DEPENDENCIES:
@@ -24,7 +24,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Nimble: 4c353d43735b38b545cbb4cb91504588eb5de926
-  OrangeFramework: e9fac3ccd7aeea20a2a296349f959d061eb826c3
+  OrangeFramework: 755c4e9669342d966a81746eeae72b65877ab299
   Quick: 563d0f6ec5f72e394645adb377708639b7dd38ab
 
 COCOAPODS: 0.39.0
