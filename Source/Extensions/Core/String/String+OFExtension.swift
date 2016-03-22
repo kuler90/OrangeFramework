@@ -2,6 +2,8 @@ import Foundation
 
 public extension String {
   
+  public var of_length: Int { return self.characters.count }
+  
   // MARK: - To Number
   
   public func of_toInt() -> Int? {

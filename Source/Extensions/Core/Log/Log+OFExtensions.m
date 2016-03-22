@@ -1,4 +1,4 @@
-#import "OFLog.h"
+#import "Log+OFExtensions.h"
 
 static OFLogHandler _handler = nil;
 #ifdef DEBUG
@@ -7,11 +7,14 @@ static const BOOL _defaultHandlerResult = YES;
 static const BOOL _defaultHandlerResult = NO;
 #endif
 
-void OFLogSetHandler(OFLogHandler handler) {
+void OFLogSetup(OFLogHandler handler) {
   _handler = [handler copy];
 }
 
-void OFLog(NSString * _Nullable message, OFLogLevel level, NSString *function, NSString *file, unsigned int line) {
+void __OFLog(NSString * _Nullable message, OFLogLevel level, NSString *function, NSString *file, unsigned int line) {
+  if (!_handler && !_defaultHandlerResult) {
+    return;
+  }
   __block NSString *formattedMessage = nil;
   OFLogLazyMessage lazyFormattedMessage = ^NSString * _Nonnull {
     if (!formattedMessage) {
@@ -20,27 +23,24 @@ void OFLog(NSString * _Nullable message, OFLogLevel level, NSString *function, N
       NSString *timeString = [dateFormatter stringFromDate:[NSDate date]];
       NSString *levelString;
       switch (level) {
-        case OFLogLevelError:
-          levelString = @"ERROR";
-          break;
-        case OFLogLevelWarning:
-          levelString = @"WARNING";
-          break;
-        case OFLogLevelDebug:
-          levelString = @"DEBUG";
+        case OFLogLevelDefault:
+          levelString = @"";
           break;
         case OFLogLevelInfo:
-          levelString = @"INFO";
+          levelString = @" [INFO]";
           break;
-        case OFLogLevelVerbose:
-          levelString = @"VERBOSE";
+        case OFLogLevelWarning:
+          levelString = @" [WARNING]";
+          break;
+        case OFLogLevelError:
+          levelString = @" [ERROR]";
       }
       NSString *filename = [file lastPathComponent];
-      formattedMessage = [NSString stringWithFormat:@"%@ [%@] %@:%d (%@): %@", timeString, levelString, filename, line, function, message];
+      formattedMessage = [NSString stringWithFormat:@"%@%@ %@:%d (%@): %@", timeString, levelString, filename, line, function, message];
     }
     return formattedMessage;
   };
-  if ( (!_handler && _defaultHandlerResult) || (_handler && _handler(lazyFormattedMessage, message, level, function, file, line)) ) {
+  if (!_handler || (_handler && _handler(lazyFormattedMessage, message, level, function, file, line))) {
     printf("%s\n", [lazyFormattedMessage() UTF8String]);
   }
 }

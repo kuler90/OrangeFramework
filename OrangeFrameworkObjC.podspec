@@ -8,24 +8,21 @@ Pod::Spec.new do |s|
   s.version          = "1.1.0"
   s.summary          = "Powerful framework aimed at fast and high quality developing mobile apps on Objective-C."
   s.description      = <<-DESC
-                       OrangeFramework is a collection of components for fast and high quality developing mobile apps on Objective-C.
-                       It includes a light-weight iOC container for dependency injection, simple logger, compoment for detecting running device, useful extensions and segues.
+                       OrangeFramework is a collection of components for fast and high quality developing mobile apps on Objective-C and Swift.
+                       It includes a light-weight iOC container, component for detecting running device, powerful extensions and useful segues.
                        DESC
   s.homepage         = "https://github.com/kuler90/OrangeFramework"
   s.license          = 'MIT'
   s.author           = { "Roman Kulesha" => "kulesha.r@gmail.com" }
   s.source           = { :git => "https://github.com/kuler90/OrangeFramework.git", :tag => s.version.to_s }
-  s.default_subspecs = 'Dependency', 'Log', 'Device', 'Extensions', 'Segues'
+  s.default_subspecs = 'Dependency', 'Device', 'Extensions', 'Segues'
   s.platform     = :ios, '8.0'
   s.requires_arc = true
+  s.deprecated = true
 
   s.subspec 'Dependency' do |ss|
     ss.source_files = 'Source/Dependency/**/*.{h,m}'
     ss.private_header_files = 'Source/Dependency/**/__OFPrivateServiceLocator.h'
-  end
-
-  s.subspec 'Log' do |ss|
-    ss.source_files = 'Source/Log/**/*.{h,m}'
   end
 
   s.subspec 'Device' do |ss|

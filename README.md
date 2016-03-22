@@ -4,10 +4,9 @@ OrangeFramework is a collection of components for fast and high quality developi
 
 OrangeFramework includes:
 * Dependency. Simple iOC container for dependency injection.
-* Log. Very simple and flexible logger.
 * Device. Component for detecting the running device info.
-* Extensions. Collection of useful Objective-C categories and Swift extensions.
-* Segues. A few needful segues. 
+* Extensions. Collection of powerful Objective-C categories, Swift extensions and some helpers.
+* Segues. A few useful segues. 
 
 ## Installation
 
@@ -17,13 +16,6 @@ OrangeFramework is available through [CocoaPods](http://cocoapods.org):
 platform :ios, '8.0'
 use_frameworks!
 pod 'OrangeFramework'
-```
-
-If you don't want use frameworks and support Swift you can install only Objective-C version:
-
-```ruby
-platform :ios, '8.0'
-pod 'OrangeFrameworkObjC'
 ```
 
 ## Author
