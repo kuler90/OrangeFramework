@@ -6,7 +6,7 @@ public func of_printSetup(handler: OFLogHandler) {
 }
 
 public func of_print(value: Any?, level: OFLogLevel = .Default, _ function: String = #function, _ file: String = #file, _ line: UInt32 = #line) {
-  __OFLog(value != nil ? "\(value)" : nil, level, function, file, line)
+  __OFLog(value != nil ? String(value!) : nil, level, function, file, line)
 }
 
 
