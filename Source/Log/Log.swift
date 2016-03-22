@@ -10,23 +10,23 @@ public class Log {
     OFLogSetHandler(handler)
   }
   
-  public class func error(value: Any?, _ function: String = __FUNCTION__, _ file: String = __FILE__, _ line: UInt32 = __LINE__) {
+  public class func error(value: Any?, _ function: String = #function, _ file: String = #file, _ line: UInt32 = #line) {
     OFLog("\(value)", LogLevel.Error, function, file, line)
   }
   
-  public class func warning(value: Any?, _ function: String = __FUNCTION__, _ file: String = __FILE__, _ line: UInt32 = __LINE__) {
+  public class func warning(value: Any?, _ function: String = #function, _ file: String = #file, _ line: UInt32 = #line) {
     OFLog("\(value)", LogLevel.Warning, function, file, line)
   }
   
-  public class func info(value: Any?, _ function: String = __FUNCTION__, _ file: String = __FILE__, _ line: UInt32 = __LINE__) {
+  public class func info(value: Any?, _ function: String = #function, _ file: String = #file, _ line: UInt32 = #line) {
     OFLog("\(value)", LogLevel.Info, function, file, line)
   }
   
-  public class func debug(value: Any?, _ function: String = __FUNCTION__, _ file: String = __FILE__, _ line: UInt32 = __LINE__) {
+  public class func debug(value: Any?, _ function: String = #function, _ file: String = #file, _ line: UInt32 = #line) {
     OFLog("\(value)", LogLevel.Debug, function, file, line)
   }
   
-  public class func verbose(value: Any?, _ function: String = __FUNCTION__, _ file: String = __FILE__, _ line: UInt32 = __LINE__) {
+  public class func verbose(value: Any?, _ function: String = #function, _ file: String = #file, _ line: UInt32 = #line) {
     OFLog("\(value)", LogLevel.Verbose, function, file, line)
   }
   
