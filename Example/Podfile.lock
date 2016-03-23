@@ -1,30 +1,44 @@
 PODS:
-  - Nimble (3.0.0)
-  - OrangeFramework (1.0.3):
-    - OrangeFramework/Dependency (= 1.0.3)
-    - OrangeFramework/Device (= 1.0.3)
-    - OrangeFramework/Extensions (= 1.0.3)
-    - OrangeFramework/Log (= 1.0.3)
-    - OrangeFramework/Segues (= 1.0.3)
-  - OrangeFramework/Dependency (1.0.3)
-  - OrangeFramework/Device (1.0.3)
-  - OrangeFramework/Extensions (1.0.3)
-  - OrangeFramework/Log (1.0.3)
-  - OrangeFramework/Segues (1.0.3)
-  - Quick (0.8.0)
+  - Nimble (3.2.0)
+  - OrangeFramework (1.2.0):
+    - OrangeFramework/Dependency (= 1.2.0)
+    - OrangeFramework/Device (= 1.2.0)
+    - OrangeFramework/Extensions (= 1.2.0)
+    - OrangeFramework/Segues (= 1.2.0)
+  - OrangeFramework/Dependency (1.2.0)
+  - OrangeFramework/Device (1.2.0)
+  - OrangeFramework/Extensions (1.2.0):
+    - OrangeFramework/Extensions/Array (= 1.2.0)
+    - OrangeFramework/Extensions/Date (= 1.2.0)
+    - OrangeFramework/Extensions/Error (= 1.2.0)
+    - OrangeFramework/Extensions/GCD (= 1.2.0)
+    - OrangeFramework/Extensions/Localization (= 1.2.0)
+    - OrangeFramework/Extensions/Log (= 1.2.0)
+    - OrangeFramework/Extensions/String (= 1.2.0)
+    - OrangeFramework/Extensions/UI (= 1.2.0)
+  - OrangeFramework/Extensions/Array (1.2.0)
+  - OrangeFramework/Extensions/Date (1.2.0)
+  - OrangeFramework/Extensions/Error (1.2.0)
+  - OrangeFramework/Extensions/GCD (1.2.0)
+  - OrangeFramework/Extensions/Localization (1.2.0)
+  - OrangeFramework/Extensions/Log (1.2.0)
+  - OrangeFramework/Extensions/String (1.2.0)
+  - OrangeFramework/Extensions/UI (1.2.0)
+  - OrangeFramework/Segues (1.2.0)
+  - Quick (0.9.1)
 
 DEPENDENCIES:
-  - Nimble (= 3.0.0)
+  - Nimble
   - OrangeFramework (from `../`)
-  - Quick (~> 0.8.0)
+  - Quick
 
 EXTERNAL SOURCES:
   OrangeFramework:
     :path: ../
 
 SPEC CHECKSUMS:
-  Nimble: 4c353d43735b38b545cbb4cb91504588eb5de926
-  OrangeFramework: 755c4e9669342d966a81746eeae72b65877ab299
-  Quick: 563d0f6ec5f72e394645adb377708639b7dd38ab
+  Nimble: 703854335d181df169bbca9c97117b5cf8c47c1d
+  OrangeFramework: 8773f4e2a23018b8c14d73196b6f696bf1cc3e62
+  Quick: a5221fc21788b6aeda934805e68b061839bc3165
 
 COCOAPODS: 0.39.0

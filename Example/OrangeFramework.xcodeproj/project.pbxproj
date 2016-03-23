@@ -10,21 +10,19 @@
 		B73EA13C1C20923800681710 /* OFDependencySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B73EA1391C20923800681710 /* OFDependencySpec.m */; };
 		B73EA13D1C20923800681710 /* DependencySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73EA13A1C20923800681710 /* DependencySpec.swift */; };
 		B7A2D82C1C23064100080093 /* OFExtensionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A2D82B1C23064100080093 /* OFExtensionSpec.m */; };
-		B7B9C9C51C2AAA77006FC8AF /* OrangeFrameworkObjC.podspec in Resources */ = {isa = PBXBuildFile; fileRef = B7B9C9C41C2AAA77006FC8AF /* OrangeFrameworkObjC.podspec */; };
-		BDE7A31337913D25FBC75722 /* Pods_OrangeFramework_Specs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DCBB1CDA75E36449C1C2D5D /* Pods_OrangeFramework_Specs.framework */; };
+		BFCB43250DE5218D395F5DA1 /* Pods_OrangeFramework_Specs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF008F8E084DE72E38E05C7F /* Pods_OrangeFramework_Specs.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0E476022061FAD6B44799FA6 /* Pods-OrangeFramework_Specs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrangeFramework_Specs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OrangeFramework_Specs/Pods-OrangeFramework_Specs.debug.xcconfig"; sourceTree = "<group>"; };
-		1DCBB1CDA75E36449C1C2D5D /* Pods_OrangeFramework_Specs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrangeFramework_Specs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		30305272C65EECC9EE29201B /* Pods-OrangeFramework_Specs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrangeFramework_Specs.release.xcconfig"; path = "Pods/Target Support Files/Pods-OrangeFramework_Specs/Pods-OrangeFramework_Specs.release.xcconfig"; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* OrangeFramework_Specs.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrangeFramework_Specs.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		81EA0F2885242DFE89DF419F /* Pods-OrangeFramework_Specs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrangeFramework_Specs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OrangeFramework_Specs/Pods-OrangeFramework_Specs.debug.xcconfig"; sourceTree = "<group>"; };
 		90233076878E7EA11B771E9A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		974A6C681E706C81A6CF84D3 /* Pods-OrangeFramework_Specs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrangeFramework_Specs.release.xcconfig"; path = "Pods/Target Support Files/Pods-OrangeFramework_Specs/Pods-OrangeFramework_Specs.release.xcconfig"; sourceTree = "<group>"; };
+		AF008F8E084DE72E38E05C7F /* Pods_OrangeFramework_Specs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrangeFramework_Specs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B73EA1381C20923800681710 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B73EA1391C20923800681710 /* OFDependencySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFDependencySpec.m; sourceTree = "<group>"; };
 		B73EA13A1C20923800681710 /* DependencySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependencySpec.swift; sourceTree = "<group>"; };
 		B7A2D82B1C23064100080093 /* OFExtensionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFExtensionSpec.m; sourceTree = "<group>"; };
-		B7B9C9C41C2AAA77006FC8AF /* OrangeFrameworkObjC.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = OrangeFrameworkObjC.podspec; path = ../OrangeFrameworkObjC.podspec; sourceTree = "<group>"; };
 		F37C9518BA8F4C03FE1D26EC /* OrangeFramework.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = OrangeFramework.podspec; path = ../OrangeFramework.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -33,7 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDE7A31337913D25FBC75722 /* Pods_OrangeFramework_Specs.framework in Frameworks */,
+				BFCB43250DE5218D395F5DA1 /* Pods_OrangeFramework_Specs.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,7 +62,6 @@
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				B7B9C9C41C2AAA77006FC8AF /* OrangeFrameworkObjC.podspec */,
 				F37C9518BA8F4C03FE1D26EC /* OrangeFramework.podspec */,
 				90233076878E7EA11B771E9A /* README.md */,
 			);
@@ -74,7 +71,7 @@
 		6D691EC1A3E37A846B35EF51 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1DCBB1CDA75E36449C1C2D5D /* Pods_OrangeFramework_Specs.framework */,
+				AF008F8E084DE72E38E05C7F /* Pods_OrangeFramework_Specs.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -82,8 +79,8 @@
 		B379AF234FFEEEF282391E87 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0E476022061FAD6B44799FA6 /* Pods-OrangeFramework_Specs.debug.xcconfig */,
-				30305272C65EECC9EE29201B /* Pods-OrangeFramework_Specs.release.xcconfig */,
+				81EA0F2885242DFE89DF419F /* Pods-OrangeFramework_Specs.debug.xcconfig */,
+				974A6C681E706C81A6CF84D3 /* Pods-OrangeFramework_Specs.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -169,7 +166,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B7B9C9C51C2AAA77006FC8AF /* OrangeFrameworkObjC.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,7 +317,7 @@
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0E476022061FAD6B44799FA6 /* Pods-OrangeFramework_Specs.debug.xcconfig */;
+			baseConfigurationReference = 81EA0F2885242DFE89DF419F /* Pods-OrangeFramework_Specs.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -343,7 +339,7 @@
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 30305272C65EECC9EE29201B /* Pods-OrangeFramework_Specs.release.xcconfig */;
+			baseConfigurationReference = 974A6C681E706C81A6CF84D3 /* Pods-OrangeFramework_Specs.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (

@@ -7,7 +7,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (IBAction)of_popAction:(id)sender; // for storyboard
 - (IBAction)of_dismissAction:(id)sender; // for storyboard
 
-- (nullable UIViewController *)of_topViewController;
++ (nullable UIViewController *)of_topViewController;
 
 @end
 
