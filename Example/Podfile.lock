@@ -1,14 +1,30 @@
 PODS:
   - Nimble (3.2.0)
-  - OrangeFramework (1.1.0):
-    - OrangeFramework/Dependency (= 1.1.0)
-    - OrangeFramework/Device (= 1.1.0)
-    - OrangeFramework/Extensions (= 1.1.0)
-    - OrangeFramework/Segues (= 1.1.0)
-  - OrangeFramework/Dependency (1.1.0)
-  - OrangeFramework/Device (1.1.0)
-  - OrangeFramework/Extensions (1.1.0)
-  - OrangeFramework/Segues (1.1.0)
+  - OrangeFramework (1.2.0):
+    - OrangeFramework/Dependency (= 1.2.0)
+    - OrangeFramework/Device (= 1.2.0)
+    - OrangeFramework/Extensions (= 1.2.0)
+    - OrangeFramework/Segues (= 1.2.0)
+  - OrangeFramework/Dependency (1.2.0)
+  - OrangeFramework/Device (1.2.0)
+  - OrangeFramework/Extensions (1.2.0):
+    - OrangeFramework/Extensions/Array (= 1.2.0)
+    - OrangeFramework/Extensions/Date (= 1.2.0)
+    - OrangeFramework/Extensions/Error (= 1.2.0)
+    - OrangeFramework/Extensions/GCD (= 1.2.0)
+    - OrangeFramework/Extensions/Localization (= 1.2.0)
+    - OrangeFramework/Extensions/Log (= 1.2.0)
+    - OrangeFramework/Extensions/String (= 1.2.0)
+    - OrangeFramework/Extensions/UI (= 1.2.0)
+  - OrangeFramework/Extensions/Array (1.2.0)
+  - OrangeFramework/Extensions/Date (1.2.0)
+  - OrangeFramework/Extensions/Error (1.2.0)
+  - OrangeFramework/Extensions/GCD (1.2.0)
+  - OrangeFramework/Extensions/Localization (1.2.0)
+  - OrangeFramework/Extensions/Log (1.2.0)
+  - OrangeFramework/Extensions/String (1.2.0)
+  - OrangeFramework/Extensions/UI (1.2.0)
+  - OrangeFramework/Segues (1.2.0)
   - Quick (0.9.1)
 
 DEPENDENCIES:
@@ -22,7 +38,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Nimble: 703854335d181df169bbca9c97117b5cf8c47c1d
-  OrangeFramework: 52f9b66156764ff04d70675a6c0785360533d192
+  OrangeFramework: 8773f4e2a23018b8c14d73196b6f696bf1cc3e62
   Quick: a5221fc21788b6aeda934805e68b061839bc3165
 
 COCOAPODS: 0.39.0
