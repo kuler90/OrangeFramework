@@ -5,7 +5,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "OrangeFramework"
-  s.version          = "1.2.0"
+  s.version          = "1.2.1"
   s.summary          = "Powerful framework aimed at fast and high quality developing mobile apps on Objective-C and Swift."
   s.description      = <<-DESC
                        OrangeFramework is a collection of components for fast and high quality developing mobile apps on Objective-C and Swift.
@@ -28,10 +28,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Extensions' do |ss|
-
-    ss.subspec 'UI' do |sss|
-      sss.source_files = 'Source/Extensions/UI/*.{swift,h,m}'
-    end
+    ss.source_files = 'Source/Extensions/Core/*.{swift,h,m}'
 
     ss.subspec 'Array' do |sss|
       sss.source_files = 'Source/Extensions/Core/Array/*.{swift,h,m}'
@@ -55,6 +52,9 @@ Pod::Spec.new do |s|
       sss.source_files = 'Source/Extensions/Core/String/*.{swift,h,m}'
     end
 
+    ss.subspec 'UI' do |sss|
+      sss.source_files = 'Source/Extensions/UI/*.{swift,h,m}'
+    end
   end
 
   s.subspec 'Segues' do |ss|
